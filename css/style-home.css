@@ -1,0 +1,301 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Palatino', 'Palatino Linotype', 'Book Antiqua', serif;
+}
+
+.background {
+    height: 100vh;
+    /* Set the container height to 100% of the viewport height */
+    display: flex;
+    align-items: center;
+    /* Center the SVG vertically */
+    overflow: hidden;
+}
+
+.background img {
+    width: 100%;
+    /* Make the SVG fill the width of the container */
+    height: 100%;
+    /* Make the SVG fill the height of the container */
+    object-fit: contain;
+    /* Disable the automatic scaling */
+    object-position: 50% 100%;
+}
+
+.dropdown {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown button {
+    background-color: white;
+    font-size: 1.8vw;
+    font-family: 'DM Sans', sans-serif, 'Courier New', Courier, monospace;
+    color: #7474B0;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border: solid; border-width: thin;
+    border-color: #D6BAD4; 
+    margin: 10%;
+    border-radius: 20px;
+}
+
+.dropdown a {
+    color: #D6BAD4;
+    font-family: 'DM Sans', sans-serif, 'Courier New', Courier, monospace;
+    display: block;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.dropdown .content {
+    display: none;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
+    padding-left: 30px;
+    padding-top: 10%;
+}
+
+.dropdown:hover .content {
+    display: block;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+}
+
+.dropdown button:hover {
+    background-color: #D6BAD4;
+    color: white;
+}
+
+.dropdown a:hover {
+    color: #B5A5D7;
+    text-shadow: -2px 2px 2px rgb(248, 219, 219);
+    transform: translateX(10px);
+}
+
+.name-text-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    font-size: 4.8vw;
+    text-align: center;
+    color: #C1BBDB;
+}
+
+.subname-text-container {
+    font-size: 1.5vw; color: #C0C7AB; font-weight: 400; 
+    font-family: 'DM Sans', sans-serif, 'Courier New', Courier, monospace;
+}
+
+#name {
+    animation: bounce2 4s ease-in-out infinite;
+}
+
+[class^="animated"] {
+    opacity: 1; /* Ensure opacity is set to 1 after animation */
+    animation: fadeIn 3s ease; /* Fade in over 3 seconds */
+}
+
+.animated1-svg {
+    /* coral + fish layer 1*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: fadeIn 3s ease, sway-right 4s ease-in-out infinite;
+}
+
+.animated2-svg {
+    /* seaweed + shark layer 2*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: fadeIn 3s ease, sway-left 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+.animated3-svg {
+    /* jellyfish */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: fadeIn 3s ease, bounce1 4s ease-in-out infinite;
+}
+
+.animated4-svg {
+    /* jellyfish */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: fadeIn 3s ease, bounce2 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        opacity: 1; /* End with opacity 1 */
+    }
+}
+
+@keyframes sway-right {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes sway-left {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes bounce1 {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-3px);
+    }
+
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes bounce2 {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(8px);
+    }
+
+    60% {
+        transform: translateY(8px);
+    }
+}
+
+a:link {
+    color: #B5A5D7;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #B5A5D7;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: mistyrose;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.close-dropdown {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 576px) {
+
+    .background .animated1-svg, .background .animated2-svg, .background .animated3-svg, .background .animated4-svg {
+        display: none;
+    }
+
+
+    .body {
+        background-image: url("Mobile\ ViewPort\ \(4\).png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .background .name-text-container {
+        display: none;
+        font-size: 10vw;
+        top:50%;
+        color:white;
+        -webkit-text-stroke: 1.5px #7474B0;
+    }
+
+    .subname-text-container {
+        font-size: 3.5vw;
+    }
+
+    .body .dropdown button {
+        font-size: 1em;
+    }
+
+    .close-dropdown {
+        visibility: visible;
+    }
+
+    body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .close-dropdown {
+        visibility: visible;
+    }
+
+    .dropdown button {
+        font-size: 2em;
+    }
+
+    .name-text-container {
+        font-size: 4em;
+    }
+
+    .subname-text-container {
+        font-size: 3vw;
+    }
+        
+}
